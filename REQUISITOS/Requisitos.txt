@@ -1,0 +1,79 @@
+Requisitos
+
+Entidade:
+ID
+DefineEntidade (Autor, Procurador, Réu e Advogado)
+Nome
+Endereco
+Numero
+Complemento
+Bairro
+Cidade
+UF
+CPFCNPJ
+Observacao
+
+ContatoEntidade:
+ID
+IDEntidade
+Nome
+Telefone
+Email
+
+Acao:
+ID
+NCNJ (Número da Ação) *Varchar *Chave Primária (Exibir na tala como sendo Nº CNJ)
+NumeracaoAntiga
+TipoAcao
+Vara
+Autor
+Procurador
+Réu
+Advogado
+Assunto
+Valor
+ProcessosAdministrativos
+CDAs
+Exercicios
+CopiaFolhas
+Observação
+Apensado(Este deverá exibir os processos filhos e o mesmo deverá  ser exibido de forma a listar permitindo ver o processo filho com um duplo clique).
+
+TipoAcao:
+ID
+Codigo
+Descricao
+
+Imoveis:
+ID
+CodigoAcao
+Imovel
+RIP
+Propietario
+Matricula
+Observacao
+
+Andamento:
+ID
+CodigoAcao
+Data (Será colocado Manualmente)
+Historico
+Obs.: Terá de ser criado um campo para ser digitado o histórico anterior e este será um bloco de texto.
+
+
+CREATE TABLE usuario (
+id bigint(20) NOT NULL auto_increment,
+username varchar(20) NOT NULL default '',
+password varchar(20) NOT NULL default '',
+nome varchar(20) NOT NULL default '',
+sobrenome varchar(20) NOT NULL default '',
+PRIMARY KEY (id,username),
+)
+
+CREATE TABLE profissao(
+id_profissao bigint(20) NOT NULL,
+nm_profissao varchar(20) NOT NULL,
+nm_empresa (20) NOT NULL, 
+PRIMARY KEY(id_profissao),
+FOREIGN KEY (id) REFERENCES usuario(id) 
+)

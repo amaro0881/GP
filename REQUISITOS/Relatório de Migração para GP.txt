@@ -1,0 +1,9 @@
+Cadastro de entidade
+====================
+procurador = responsavel
+reu = coresponsavel
+advogado = requerente
+
+
+
+
